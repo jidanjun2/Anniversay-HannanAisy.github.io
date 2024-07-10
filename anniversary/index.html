@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong> Dear Hervani Rohadatul Aisy.</strong>
+                        <p>
+Would you mind sitting with me for one more year, and another, and another, or maybe forever? and then we gonna make it to the next life.
+Happy Anniversary 11/07/202
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+
+    <audio id="myAudio" autoplay loop>
+        <source src="Teddy Adhitya - Just You (Official Lyric Video).mp3" type="audio/mpeg"/>
+        Browsermu tidak mendukung tag audio, upgrade donk!
+    </audio>
+    <button id="playButton">Play Audio</button>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+    <script>
+        const playButton = document.getElementById('playButton');
+        const audio = document.getElementById('myAudio');
+
+        playButton.addEventListener('click', function() {
+            audio.play().catch(error => {
+                console.log('Play was prevented:', error);
+            });
+        });
+    </script>
+</body>
+</html>
